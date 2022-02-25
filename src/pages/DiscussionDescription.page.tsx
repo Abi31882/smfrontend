@@ -6,7 +6,6 @@ import {
   createReplyBeginAction,
   getSingleDiscussionBeginAction,
 } from "../actions/discussion.actions";
-import { reply } from "../apis/auth";
 import { userIdSelector } from "../selectors/auth.selectors";
 import { singleDiscussionSelector } from "../selectors/discussion.selectors";
 import { useAppSelector } from "../store";
@@ -19,6 +18,7 @@ const DiscussionDescriptionpage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSingleDiscussionBeginAction(id!));
+    //eslint-disable-next-line
   }, []);
 
   const onSubmit = (e: any) => {
@@ -58,7 +58,7 @@ const DiscussionDescriptionpage = () => {
             ""
           )}
           {singleDiscussion.reply?.map((r) => (
-            <div>
+            <div key={r._id}>
               <div className="border-2 space-y-2 border-green-500 rounded-lg">
                 <div>{r.reply}</div>
                 <div>

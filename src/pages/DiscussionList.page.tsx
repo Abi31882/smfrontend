@@ -13,6 +13,7 @@ const DiscussionListpage = () => {
   const discussionList = useAppSelector(discussionListSelector);
   useEffect(() => {
     dispatch(getAllDiscussionsBeginAction());
+    //eslint-disable-next-line
   }, []);
 
   return (
@@ -57,6 +58,7 @@ const DiscussionListpage = () => {
       )}
       {discussionList.map((d) => (
         <Link
+          key={d._id}
           className="flex border-4 rounded-lg hover:bg-blue-50 border-black p-10 items-center justify-center space-x-2 text-base"
           to={`/discussion/${d._id}`}
         >

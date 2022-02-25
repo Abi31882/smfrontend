@@ -35,18 +35,18 @@ function* Login(action: AnyAction): Generator<any> {
       userName: action.payload.userName,
       password: action.payload.password,
     });
-    // console.log(res);
+    //eslint-disable-next-line
     {
       res.data.token &&
         localStorage.setItem(AUTH_TOKEN, "Bearer " + res.data.token);
     }
+    //eslint-disable-next-line
     {
       !res.data.token && alert(res.data.message);
     }
     yield put(loginCompleteAction(res.data.doc));
     window.location.href = "/discussion-all";
   } catch (e: any) {
-    // console.log(e);
     // alert(e);
   }
 }
@@ -57,11 +57,12 @@ function* Signup(action: AnyAction): Generator<any> {
       userName: action.payload.userName,
       password: action.payload.password,
     });
-    // console.log(res);
+    //eslint-disable-next-line
     {
       res.data.token &&
         localStorage.setItem(AUTH_TOKEN, "Bearer " + res.data.token);
     }
+    //eslint-disable-next-line
     {
       !res.data.token && alert(res.data);
     }
@@ -78,7 +79,6 @@ function* Signup(action: AnyAction): Generator<any> {
 function* GetMe(action: AnyAction): Generator<any> {
   try {
     const res: any = yield call(me);
-    // console.log(res);
     yield put(getMeCompleteAction(res.data.doc));
   } catch (e: any) {
     alert(e);
@@ -88,7 +88,6 @@ function* GetMe(action: AnyAction): Generator<any> {
 function* GetAllDiscussions(action: AnyAction): Generator<any> {
   try {
     const res: any = yield call(getAllDiscussions);
-    // console.log(res);
     yield put(getAllDiscussionsCompletedAction(res.data));
   } catch (e: any) {
     alert(e);
@@ -98,7 +97,6 @@ function* GetAllDiscussions(action: AnyAction): Generator<any> {
 function* GetSingleDiscussion(action: AnyAction): Generator<any> {
   try {
     const res: any = yield call(getSingleDiscussion, action.payload);
-    console.log(res.data);
     yield put(getSingleDiscussionCompleteAction(res.data));
   } catch (e: any) {
     alert(e);
@@ -112,8 +110,8 @@ function* CreateReply(action: AnyAction): Generator<any> {
       userID: action.payload.userID,
       reply: action.payload.reply,
     });
-    console.log(res.data);
     yield put(createReplyCompleteAction(res.data));
+    //eslint-disable-next-line
     window.location.href = window.location.href;
   } catch (e: any) {
     alert(e);
@@ -127,7 +125,6 @@ function* CreateDiscussion(action: AnyAction): Generator<any> {
       description: action.payload.description,
       id: action.payload.id,
     });
-    console.log(res.data);
     yield put(createDiscussionCompleteAction(res.data));
     alert("discussion created successfully");
     window.location.href = "/discussion-all";

@@ -1,5 +1,4 @@
 import { createSelector } from "reselect";
-import { Discussion } from "../apis/interfaces";
 import { discussionStateSelector } from "./app.selectors";
 
 export const discussionListSelector = createSelector(
