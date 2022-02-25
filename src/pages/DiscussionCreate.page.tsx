@@ -85,13 +85,3 @@ const DicsussionCreatepage = () => {
 };
 
 export default DicsussionCreatepage;
-
-{
-  /* <div>
-<form onSubmit={(e) => onSubmit(e)}>
-
-
-  <button type="submit">Create</button>
-</form>
-</div> */
-}

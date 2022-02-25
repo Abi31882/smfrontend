@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginBeginAction } from "../actions/auth.actions";
-import { login } from "../apis/auth";
 
 const LoginPage = () => {
   const dispatch = useDispatch();

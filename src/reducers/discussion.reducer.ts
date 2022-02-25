@@ -1,9 +1,5 @@
 import { Reducer } from "redux";
-import {
-  GET_ME_COMPLETE,
-  LOGIN_COMPLETE,
-  SIGNUP_COMPLETE,
-} from "../actions/auth.actions";
+
 import {
   CREATING_REPLY_COMPLETED,
   GET_ALL_DISCUSSIONS_COMPLETED,

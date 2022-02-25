@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signupBeginAction } from "../actions/auth.actions";
-import { login, signup } from "../apis/auth";
 
 const SignupPage = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -72,33 +70,3 @@ const SignupPage = () => {
 };
 
 export default SignupPage;
-
-{
-  /* 
-
-
-
-<div>
-      <Link to={"/login"}>Already Registered? Login here.</Link>
-
-      <form
-        onSubmit={(e) => {
-          onSubmit(e);
-        }}
-      >
-        <input
-          placeholder="User Name"
-          onChange={(e) => {
-            setUserName(e.target.value);
-          }}
-        />
-        <input
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button type="submit">Signup</button>
-      </form>
-    </div> */
-}
