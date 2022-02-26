@@ -28,6 +28,7 @@ const SignupPage = () => {
                 UserName
               </label>
               <input
+                required
                 onChange={(e) => {
                   setUserName(e.target.value);
                 }}
@@ -40,6 +41,7 @@ const SignupPage = () => {
             <div className="mt-4">
               <label className="block">Password</label>
               <input
+                required
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}

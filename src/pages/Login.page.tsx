@@ -30,6 +30,7 @@ const LoginPage = () => {
           <div>
             <label htmlFor="UserName">UserName</label>
             <input
+              required
               onChange={(e) => {
                 setUserName(e.target.value);
               }}
@@ -42,6 +43,7 @@ const LoginPage = () => {
           <div>
             <label htmlFor="password">Password</label>
             <input
+              required
               type="password"
               onChange={(e) => {
                 setPassword(e.target.value);
